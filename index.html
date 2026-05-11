@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pure Entertainment – DJ, Inflatable Night Club & All Parties</title>
+  <meta name="description" content="Pure Entertainment – Full-service event production company. DJ packages, Inflatable Night Club, photo booths & more. Hudson Valley's best." />
+
+  <!-- ═══════════════════════════════════════════════════════════
+       🎨 EASY EDIT ZONE — Change colors, fonts, and text here!
+       ═══════════════════════════════════════════════════════════ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════════════
+       🎨 THEME COLORS — Edit these to change the look
+       ═══════════════════════════════════════════════ */
+    :root {
+      --gold:       #D4A92A;   /* Main accent color */
+      --gold-light: #F0C94A;   /* Hover / highlight */
+      --dark:       #0A0A0A;   /* Background black */
+      --dark2:      #111111;   /* Card background */
+      --dark3:      #1A1A1A;   /* Section background */
+      --text:       #E8E0D0;   /* Main text color */
+      --muted:      #888880;   /* Secondary text */
+      --white:      #FFFFFF;
+      --font-head:  'Bebas Neue', sans-serif;
+      --font-body:  'DM Sans', sans-serif;
+      --radius:     4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ─── NOISE TEXTURE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 72px;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212,169,42,0.15);
+    }
+
+    .nav-logo {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--dark) !important;
+      padding: 0.45rem 1.2rem;
+      border-radius: var(--radius);
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--dark) !important; }
+
+    /* Mobile hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); border-radius: 2px; transition: 0.3s; }
+
+    /* ─── HERO ─── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 5vw 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(212,169,42,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(212,169,42,0.06) 0%, transparent 60%),
+        var(--dark);
+    }
+
+    /* Animated grid lines */
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(212,169,42,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,169,42,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridScroll 20s linear infinite;
+    }
+
+    @keyframes gridScroll {
+      0% { background-position: 0 0; }
+      100% { background-position: 60px 60px; }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 820px; }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(212,169,42,0.4);
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: clamp(3.5rem, 9vw, 7.5rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      animation: fadeUp 0.8s ease 0.15s both;
+    }
+
+    .hero-title span { color: var(--gold); }
+
+    .hero-sub {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeUp 0.8s ease 0.3s both;
+    }
+
+    .hero-btns {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 0.45s both;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+      padding: 0.85rem 2.2rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      padding: 0.85rem 2.2rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: fadeUp 1s ease 1s both;
+    }
+    .scroll-hint::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%,100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--dark2);
+      border-top: 1px solid rgba(212,169,42,0.15);
+      border-bottom: 1px solid rgba(212,169,42,0.15);
+      padding: 2.5rem 5vw;
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 3rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* ─── SECTION WRAPPER ─── */
+    section { padding: 100px 5vw; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 540px;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--dark3);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-frame {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 2px;
+      background: var(--dark2);
+      border: 1px solid rgba(212,169,42,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-frame-inner {
+      font-family: var(--font-head);
+      font-size: 8rem;
+      color: rgba(212,169,42,0.08);
+      line-height: 1;
+      text-align: center;
+      user-select: none;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 1.2rem;
+      border-radius: 50%;
+      width: 110px;
+      height: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      text-align: center;
+      line-height: 1.1;
+    }
+    .about-badge .num { font-size: 2rem; }
+    .about-badge .lbl { font-size: 0.7rem; letter-spacing: 0.05em; }
+
+    .about-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .about-list li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.7rem;
+      margin-top: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--dark); text-align: center; }
+    #services .section-sub { margin-left: auto; margin-right: auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.5px;
+      background: rgba(212,169,42,0.1);
+      border: 1px solid rgba(212,169,42,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .service-card {
+      background: var(--dark2);
+      padding: 2.5rem;
+      text-align: left;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, rgba(212,169,42,0.07), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .service-card:hover::before { opacity: 1; }
+    .service-card:hover { background: #141414; }
+
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .service-title {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-top: 1.2rem;
+      transition: gap 0.2s;
+    }
+    .service-link:hover { gap: 0.7rem; }
+
+    /* ─── INFLATABLE HIGHLIGHT ─── */
+    #inflatable {
+      background: var(--dark3);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .inflate-visual {
+      aspect-ratio: 1;
+      background: var(--dark2);
+      border: 1px solid rgba(212,169,42,0.2);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .inflate-visual::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(212,169,42,0.08), transparent 70%);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 0.5; } 50% { opacity: 1; }
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(212,169,42,0.1);
+      margin-top: 2rem;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .spec {
+      background: var(--dark2);
+      padding: 1.2rem 1.5rem;
+    }
+    .spec-val {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      color: var(--gold);
+    }
+    .spec-key {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    #reviews { background: var(--dark); text-align: center; }
+    #reviews .section-sub { margin-left: auto; margin-right: auto; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .review-card {
+      background: var(--dark2);
+      border: 1px solid rgba(212,169,42,0.1);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: border-color 0.3s;
+    }
+    .review-card:hover { border-color: rgba(212,169,42,0.35); }
+
+    .stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
+
+    .review-text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+
+    .reviewer {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+    .reviewer-event {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: var(--dark3);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(212,169,42,0.1);
+      border: 1px solid rgba(212,169,42,0.2);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-val {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    /* Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--dark2);
+      border: 1px solid rgba(212,169,42,0.15);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-group select option { background: var(--dark2); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(212,169,42,0.15);
+      padding: 3rem 5vw;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      background: var(--dark2);
+      border: 1px solid rgba(212,169,42,0.15);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1rem;
+      color: var(--muted);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: rgba(10,10,10,0.98); padding: 1.5rem 5vw; gap: 1.2rem; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+
+      #about, #inflatable, #contact, footer {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .about-badge { right: 0; bottom: -1rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .stats-bar { gap: 2rem; }
+      footer { grid-template-columns: 1fr; text-align: center; }
+      .footer-social { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ╔══════════════════════════════════════╗
+       ║  🔧 NAV — Edit company name & links  ║
+       ╚══════════════════════════════════════╝ -->
+  <nav>
+    <a href="#home" class="nav-logo">PURE ENTERTAINMENT</a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#inflatable">Inflatable</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+
+  <!-- ╔════════════════════════════════════╗
+       ║  🔧 HERO — Main headline & tagline ║
+       ╚════════════════════════════════════╝ -->
+  <section id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Hudson Valley's #1 Event Company</span>
+
+      <h1 class="hero-title">
+        WE MAKE YOUR<br><span>PARTY LEGENDARY</span>
+      </h1>
+
+      <p class="hero-sub">
+        Full-service event production — DJ packages, Inflatable Night Club,
+        photo booths &amp; more. One company. Every party. Unforgettable every time.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Book Your Event</a>
+        <a href="#services" class="btn-outline">Explore Services</a>
+      </div>
+    </div>
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════╗
+       ║  🔧 STATS — Edit the numbers ║
+       ╚══════════════════════════════╝ -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Events Produced</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">8 YRS</div>
+      <div class="stat-label">In Business</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5 ★</div>
+      <div class="stat-label">Average Rating</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Tri-State</div>
+      <div class="stat-label">Area Coverage</div>
+    </div>
+  </div>
+
+
+  <!-- ╔════════════════════════════════════╗
+       ║  🔧 ABOUT — Edit company story     ║
+       ╚════════════════════════════════════╝ -->
+  <section id="about">
+    <div class="about-visual">
+      <div class="about-frame">
+        <div class="about-frame-inner">PE</div>
+      </div>
+      <div class="about-badge">
+        <span class="num">8</span>
+        <span class="lbl">Years of Excellence</span>
+      </div>
+    </div>
+
+    <div>
+      <p class="section-label">Who We Are</p>
+      <h2 class="section-title">Not Just a DJ<br>Company</h2>
+      <p class="section-sub">
+        Pure Entertainment was built on a simple idea: every event deserves more than
+        a guy with a speaker. We are a crew of creative, passionate professionals who
+        tailor every moment to your vision.
+      </p>
+
+      <!-- 🔧 Edit each bullet point below -->
+      <ul class="about-list">
+        <li>DJ Rey leads the team with 8+ years of professional experience</li>
+        <li>Serving weddings, birthdays, corporate events &amp; backyard parties</li>
+        <li>One-stop-shop: DJ, lighting, photo booth, inflatable tent &amp; more</li>
+        <li>Steady 5-star rating across hundreds of happy clients</li>
+        <li>We customize every package — no two events are the same</li>
+      </ul>
+
+      <div style="margin-top: 2rem;">
+        <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════════════╗
+       ║  🔧 SERVICES — Edit service cards here ║
+       ╚════════════════════════════════════════╝ -->
+  <section id="services">
+    <p class="section-label">What We Offer</p>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Everything you need for an unforgettable event, all under one roof.</p>
+
+    <div class="services-grid">
+
+      <!-- Service 1 — Edit icon, title, description -->
+      <div class="service-card">
+        <span class="service-icon">🎧</span>
+        <div class="service-title">DJ Packages</div>
+        <p class="service-desc">
+          Fully customized DJ sets for weddings, birthdays, quinceañeras, proms,
+          corporate parties &amp; more. Professional sound systems included.
+        </p>
+        <a href="#contact" class="service-link">Book DJ →</a>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card">
+        <span class="service-icon">⛺</span>
+        <div class="service-title">Inflatable Night Club</div>
+        <p class="service-desc">
+          Our signature 18×18×13 ft inflatable tent transforms any backyard
+          into a private night club. Fits up to 35 guests. Lights &amp; sound included.
+        </p>
+        <a href="#inflatable" class="service-link">Learn More →</a>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card">
+        <span class="service-icon">📸</span>
+        <div class="service-title">Photo Booth</div>
+        <p class="service-desc">
+          Fun, high-quality photo booth packages with props, instant prints,
+          digital sharing, and custom overlays to match your event theme.
+        </p>
+        <a href="#contact" class="service-link">Book Booth →</a>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card">
+        <span class="service-icon">💡</span>
+        <div class="service-title">Uplighting & Effects</div>
+        <p class="service-desc">
+          Transform any venue with professional uplighting, LED effects, fog
+          machines, and custom monogram gobo projections.
+        </p>
+        <a href="#contact" class="service-link">Add Lighting →</a>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-card">
+        <span class="service-icon">🎬</span>
+        <div class="service-title">Photos & Video</div>
+        <p class="service-desc">
+          Capture every moment. We partner with professional photographers and
+          videographers to document your event from start to finish.
+        </p>
+        <a href="#contact" class="service-link">Learn More →</a>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-card">
+        <span class="service-icon">🎁</span>
+        <div class="service-title">Add-On Packages</div>
+        <p class="service-desc">
+          Confetti cannons, cold sparklers, custom playlists, MC services,
+          and more. Mix and match to create your perfect package.
+        </p>
+        <a href="#contact" class="service-link">See Add-Ons →</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║  🔧 INFLATABLE TENT — Edit specs & features  ║
+       ╚══════════════════════════════════════════════╝ -->
+  <section id="inflatable">
+    <div class="inflate-visual">⛺</div>
+
+    <div>
+      <p class="section-label">Signature Experience</p>
+      <h2 class="section-title">The Inflatable<br>Night Club</h2>
+      <p class="section-sub">
+        One-of-a-kind in the Hudson Valley. We bring the full night-club
+        experience right to your backyard — no venue needed.
+      </p>
+
+      <!-- 🔧 Edit specs below -->
+      <div class="specs-grid">
+        <div class="spec">
+          <div class="spec-val">18×18</div>
+          <div class="spec-key">Footprint (ft)</div>
+        </div>
+        <div class="spec">
+          <div class="spec-val">13 ft</div>
+          <div class="spec-key">Ceiling Height</div>
+        </div>
+        <div class="spec">
+          <div class="spec-val">35</div>
+          <div class="spec-key">Guest Capacity</div>
+        </div>
+        <div class="spec">
+          <div class="spec-val">All-In</div>
+          <div class="spec-key">DJ + Lights + Sound</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <a href="#contact" class="btn-primary">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════════════╗
+       ║  🔧 REVIEWS — Edit testimonials here   ║
+       ╚════════════════════════════════════════╝ -->
+  <section id="reviews">
+    <p class="section-label">What Clients Say</p>
+    <h2 class="section-title">5-Star Reviews</h2>
+    <p class="section-sub">Hear from the hundreds of clients who trusted us with their most important moments.</p>
+
+    <div class="reviews-grid">
+
+      <!-- Review 1 — Edit quote, name, event type -->
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          "Pure Entertainment absolutely made our wedding night. DJ Rey read the
+          crowd perfectly the entire evening — every song was a hit. Our guests
+          are still talking about it!"
+        </p>
+        <div class="reviewer">Jessica &amp; Marcus T.</div>
+        <div class="reviewer-event">Wedding • Hudson Valley</div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          "The inflatable night club was the highlight of my daughter's
+          quinceañera. Everyone was blown away. It was like having a real
+          nightclub in our backyard. 100% recommend!"
+        </p>
+        <div class="reviewer">Maria L.</div>
+        <div class="reviewer-event">Quinceañera • Poughkeepsie</div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          "Professional, on time, and genuinely fun to work with. The photo
+          booth was a massive hit and the lighting made our venue look stunning.
+          Will book again for every future event!"
+        </p>
+        <div class="reviewer">Derek M.</div>
+        <div class="reviewer-event">Corporate Party • Newburgh</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════════════╗
+       ║  🔧 CONTACT — Edit info & social links ║
+       ╚════════════════════════════════════════╝ -->
+  <section id="contact">
+    <div class="contact-info">
+      <div>
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">Let's Make<br>It Happen</h2>
+        <p class="section-sub">
+          Ready to book or just have questions? Reach out — we'd love to
+          hear about your event and put together a custom package for you.
+        </p>
+      </div>
+
+      <!-- 🔧 Edit your contact details below -->
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-val">(845) 000-0000</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-val">info@purentertainment845.com</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Service Area</div>
+          <div class="contact-val">Hudson Valley & Tri-State Area</div>
+        </div>
+      </div>
+
+      <!-- 🔧 Edit social media links below -->
+      <div style="display:flex; gap:0.8rem; margin-top: 0.5rem;">
+        <a href="https://www.facebook.com/purentertainment845" class="social-btn" target="_blank" rel="noopener">f</a>
+        <a href="https://www.instagram.com/purentertainment845/" class="social-btn" target="_blank" rel="noopener">ig</a>
+        <a href="https://twitter.com/PureEnt845" class="social-btn" target="_blank" rel="noopener">𝕏</a>
+        <a href="https://www.youtube.com/channel/UCjc8IItZrTRXCu302SBT6Dw" class="social-btn" target="_blank" rel="noopener">▶</a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="jane@email.com" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(845) 000-0000" />
+        </div>
+        <div class="form-group">
+          <label for="date">Event Date</label>
+          <input type="date" id="date" />
+        </div>
+      </div>
+
+      <!-- 🔧 Add or remove service options below -->
+      <div class="form-group">
+        <label for="service">Service Interested In</label>
+        <select id="service">
+          <option value="">Select a service…</option>
+          <option value="dj">DJ Package</option>
+          <option value="inflatable">Inflatable Night Club</option>
+          <option value="photo">Photo Booth</option>
+          <option value="lighting">Uplighting & Effects</option>
+          <option value="bundle">Full Bundle (DJ + Inflatable + Booth)</option>
+          <option value="other">Other / Not Sure Yet</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Tell Us About Your Event</label>
+        <textarea id="message" placeholder="Venue, guest count, vibe you're going for…"></textarea>
+      </div>
+
+      <button class="btn-primary" onclick="submitForm()" style="width:100%; font-size:1rem; padding:1rem;">
+        Send My Request ✦
+      </button>
+
+      <p id="form-msg" style="font-size:0.85rem; color:var(--gold); text-align:center; display:none; margin-top:0.5rem;">
+        ✅ Message sent! We'll be in touch within 24 hours.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════╗
+       ║  🔧 FOOTER — Edit copyright  ║
+       ╚══════════════════════════════╝ -->
+  <footer>
+    <div>
+      <div class="footer-logo">PURE ENTERTAINMENT</div>
+      <p class="footer-copy">© 2025 Pure Entertainment. Hudson Valley's Premier Event Company.</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/purentertainment845" class="social-btn" target="_blank" rel="noopener">f</a>
+      <a href="https://www.instagram.com/purentertainment845/" class="social-btn" target="_blank" rel="noopener">ig</a>
+      <a href="https://twitter.com/PureEnt845" class="social-btn" target="_blank" rel="noopener">𝕏</a>
+      <a href="https://www.youtube.com/channel/UCjc8IItZrTRXCu302SBT6Dw" class="social-btn" target="_blank" rel="noopener">▶</a>
+    </div>
+  </footer>
+
+
+  <script>
+    /* ─── Mobile nav toggle ─── */
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    /* ─── Fake form submit (replace with a real service like Formspree) ─── */
+    function submitForm() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      if (!name || !email) {
+        alert('Please fill in your name and email!');
+        return;
+      }
+      document.getElementById('form-msg').style.display = 'block';
+      // 🔧 To make this form actually send emails:
+      // Sign up at formspree.io, get your form ID, then replace the line above
+      // with: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(form) })
+    }
+
+    /* ─── Scroll-reveal animation ─── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card, .review-card, .stat, .spec, .contact-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
